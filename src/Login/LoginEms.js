@@ -1,5 +1,7 @@
 import { Button, TextField } from '@mui/material'
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { React, useState } from 'react'
 import { toast } from 'react-toastify';
 
@@ -10,6 +12,7 @@ export default function LoginEms() {
         password: ""
     });
 
+    const myNav = useNavigate();
     const myHandler = (e) => {
         setdata({ ...data, [e.target.name]: e.target.value })
     }
@@ -20,6 +23,7 @@ export default function LoginEms() {
             .then(y => {
                 console.log(y);
                 localStorage.setItem("EMSdata", JSON.stringify(y.data))
+                myNav('/dashbord')
                 toast("Login Successfully.....")
             }).catch(() => {
                 toast("Login is Faild")
@@ -34,7 +38,7 @@ export default function LoginEms() {
                 // }
             })
             .then(r => {
-                y(r.data);//Data Print in Table/Grid
+                y(r.data);
             }).catch(
                 y => {
                     console.log(y);
@@ -62,8 +66,9 @@ export default function LoginEms() {
                     onChange={myHandler}
                     name='password'>
                 </TextField><br /><br />
-                <input type="submit" value="Login" className='form-control btn btn-outline-primary' /><br /><br />
-                {/* <button onClick={Fetcdata} className='form-control btn btn-outline-danger'>Fetch Data</button> */}
+                <input type="submit" value="Login" className='form-control btn btn-outline-dark' /><br /><br />
+                
+                <Link to={"/registartion"}>Creacte A new account</Link>
             </form>
 
         </div>

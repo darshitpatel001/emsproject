@@ -1,5 +1,6 @@
 import { TextField } from '@mui/material';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import { React, useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -25,10 +26,6 @@ const RegistrationEMS = () => {
             .then(y => {
                 console.log(y.data)
                 toast("Registration Successfully")  
-            .catch((y) => {
-                    console.log(y);
-                    toast("Registration is Faild");
-                  });
             })
     }
     return (
@@ -82,7 +79,8 @@ const RegistrationEMS = () => {
                     type='password'>
                 </TextField><br /><br />
 
-                <input type="submit" value="Register" class="form-control btn btn-outline-primary" />
+                <input type="submit" value="Register" class="form-control btn btn-outline-dark" />
+                <Link to={"/"}>Already A new account</Link>
             </form>
         </div>
     );

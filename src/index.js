@@ -9,21 +9,17 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import LoginEms from './Login/LoginEms';
 import RegistrationEMS from './Login/RegistrationEMS';
+import Dashboard from './Login/Dashboard';
+import RequireAuth from './Login/Private/RequireAuth'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <ToastContainer />
-    <LoginEms />
-    <RegistrationEMS />
-    {/* <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<LoginEms />}></Route>
-      <Route path='/' element={<LoginEms />}></Route>
-      <Route path='/' element={<LoginEms />}></Route>
-    </Routes>
-    </BrowserRouter> */}
+    <App />
+    {/* <ToastContainer /> */}
+    {/* <LoginEms />
+    <RegistrationEMS /> */}
+  
 
   </React.StrictMode>
 );
