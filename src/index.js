@@ -5,12 +5,26 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import LoginEms from './Login/LoginEms';
+import RegistrationEMS from './Login/RegistrationEMS';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <ToastContainer />
+    <LoginEms />
+    <RegistrationEMS />
+    {/* <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<LoginEms />}></Route>
+      <Route path='/' element={<LoginEms />}></Route>
+      <Route path='/' element={<LoginEms />}></Route>
+    </Routes>
+    </BrowserRouter> */}
+
   </React.StrictMode>
 );
 
